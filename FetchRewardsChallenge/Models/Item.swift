@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct TopLevelObject: Codable {
-    var results: [Item]
-}
+//struct TopLevelObject: Codable {
+//    var JSON: [Item]
+//}
 
 struct Item: Codable {
     
