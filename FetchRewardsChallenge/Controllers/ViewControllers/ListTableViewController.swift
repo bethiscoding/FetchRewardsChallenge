@@ -12,42 +12,11 @@ class ListTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-//    var outings: [Outing] = [] {
-//        didSet {
-//            outings.sort(by: { $0.date > $1.date })
-//            favoriteOutings = outings.filter( { $0.isFavorite } )
-//        }
-//    }
-//
-//    var favoriteOutings: [Outing] {
-//        get {
-//            outings.filter( { $0.isFavorite })
-//        } set {
-//        }
-//    }
-    
-//    var fetchedItems = [Item]() {
-//        didSet {
-//
-//            fetchedItems.removeAll(where: { $0.name == nil || $0.name == "" })
-//
-//
-//            for item in fetchedItems {
-//                if item.name != nil && item.name != "" {
-//                    //items.append(item)
-//                }
-//            }
-//            items.sort(by: { $0.listID < $1.listID } )
-//        }
-//    }
-    
     var listIDs = [Int]()
-    
-    var lists = [List]()
 
     var items = [Item]() {
         didSet {
-            items.removeAll(where: { $0.name == nil || $0.name == "" })
+            items.removeAll(where: { $0.name == "" })
             
             for item in items {
                 if !listIDs.contains(item.listID) {
@@ -63,7 +32,7 @@ class ListTableViewController: UITableViewController {
             }
             
             for list in ListController.shared.lists {
-                list.items.sort(by: <)
+                list.items.sort(by: { $0.name.localizedStandardCompare($1.name) == .orderedAscending })
             }
         }
     }

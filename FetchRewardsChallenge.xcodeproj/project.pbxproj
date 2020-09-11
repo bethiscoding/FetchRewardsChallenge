@@ -14,7 +14,6 @@
 		521E05432509567B004DA47B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E05412509567B004DA47B /* LaunchScreen.storyboard */; };
 		521E055225095797004DA47B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E055125095797004DA47B /* Item.swift */; };
 		521E055425095838004DA47B /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E055325095838004DA47B /* ItemController.swift */; };
-		521E055725095C59004DA47B /* ItemJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E055625095C59004DA47B /* ItemJSON.swift */; };
 		521E055925095F6C004DA47B /* ItemError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E055825095F6C004DA47B /* ItemError.swift */; };
 		521E055B25096016004DA47B /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E055A25096016004DA47B /* ListTableViewController.swift */; };
 		521E055D25097D5E004DA47B /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E055C25097D5E004DA47B /* ItemTableViewController.swift */; };
@@ -32,7 +31,6 @@
 		521E05442509567B004DA47B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		521E055125095797004DA47B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		521E055325095838004DA47B /* ItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemController.swift; sourceTree = "<group>"; };
-		521E055625095C59004DA47B /* ItemJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemJSON.swift; sourceTree = "<group>"; };
 		521E055825095F6C004DA47B /* ItemError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemError.swift; sourceTree = "<group>"; };
 		521E055A25096016004DA47B /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		521E055C25097D5E004DA47B /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 		521E055525095C47004DA47B /* HelperFiles */ = {
 			isa = PBXGroup;
 			children = (
-				521E055625095C59004DA47B /* ItemJSON.swift */,
 				521E055825095F6C004DA47B /* ItemError.swift */,
 			);
 			path = HelperFiles;
@@ -220,7 +217,6 @@
 				521E055B25096016004DA47B /* ListTableViewController.swift in Sources */,
 				521E055925095F6C004DA47B /* ItemError.swift in Sources */,
 				521E055225095797004DA47B /* Item.swift in Sources */,
-				521E055725095C59004DA47B /* ItemJSON.swift in Sources */,
 				521E055425095838004DA47B /* ItemController.swift in Sources */,
 				521E055D25097D5E004DA47B /* ItemTableViewController.swift in Sources */,
 				521E053925095677004DA47B /* SceneDelegate.swift in Sources */,

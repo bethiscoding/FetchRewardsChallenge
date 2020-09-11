@@ -13,11 +13,15 @@ struct Item: Codable {
     private enum CodingKeys: String, CodingKey {
         case id = "id"
         case listID = "listId"
-        case name = "name"
+        case fetchedName = "name"
     }
     
     let id: Int
     let listID: Int
-    let name: String?
+    let fetchedName: String?
+    
+    var name: String {
+        fetchedName ?? ""
+    }
     
 } //End
