@@ -12,13 +12,13 @@ class ItemController {
     
     // MARK: - Properties
         
-    private static let itemURL = URL(string: "https://fetch-hiring.s3.amazonaws.com/hiring.json")
+    private static let baseURL = URL(string: "https://fetch-hiring.s3.amazonaws.com/hiring.json")
         
     // MARK: - Methods
     
     static func fetchItems(completion: @escaping (Result<[Item], ItemError>) -> Void) {
 
-        guard let finalURL = itemURL else { return completion(.failure(.invalidURL))}
+        guard let finalURL = baseURL else { return completion(.failure(.invalidURL))}
         print("URL: \(finalURL)")
         
         URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
