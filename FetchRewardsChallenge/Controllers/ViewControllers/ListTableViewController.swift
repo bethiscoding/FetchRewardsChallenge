@@ -43,7 +43,7 @@ class ListTableViewController: UITableViewController {
     
     var listIDs = [Int]()
     
-    var lists = [[Item]]()
+    var lists = [List]()
 
     var items = [Item]() {
         didSet {
@@ -52,11 +52,19 @@ class ListTableViewController: UITableViewController {
             for item in items {
                 if !listIDs.contains(item.listID) {
                     listIDs.append(item.listID)
+                    ListController.shared.create(id: item.listID)
                 }
-                
-                
             }
             listIDs.sort(by: { $0 < $1 })
+            ListController.shared.lists.sort(by: { $0.id < $1.id })
+            
+            for item in items {
+                ListController.shared.addItem(item: item)
+            }
+            
+            for list in ListController.shared.lists {
+                list.items.sort(by: <)
+            }
         }
     }
     
@@ -93,9 +101,8 @@ class ListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath)
 
-        let listID = listIDs[indexPath.row]
-        cell.textLabel?.text = "List ID: \(listID)"
-        //cell.detailTextLabel?.text = "List ID: \(item.listID)"
+        let list = ListController.shared.lists[indexPath.row]
+        cell.textLabel?.text = "List ID: \(list.id)"
 
         return cell
     }
@@ -104,8 +111,11 @@ class ListTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ToItemTVC" {
+            guard let indexPath = tableView.indexPathForSelectedRow, let destinationVC = segue.destination as? ItemTableViewController else { return }
+            let list = ListController.shared.lists[indexPath.row]
+            destinationVC.list = list
+        }
     }
 
 } //End

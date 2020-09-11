@@ -8,20 +8,16 @@
 
 import Foundation
 
-//struct TopLevelObject: Codable {
-//    var JSON: [Item]
-//}
-
 struct Item: Codable {
     
     private enum CodingKeys: String, CodingKey {
-        case ID = "id"
+        case id = "id"
         case listID = "listId"
         case name = "name"
     }
     
-    let ID: Int
+    let id: Int
     let listID: Int
     let name: String?
     
-}
+} //End

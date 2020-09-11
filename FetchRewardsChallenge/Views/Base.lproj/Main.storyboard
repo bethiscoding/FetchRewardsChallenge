@@ -32,7 +32,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="mi0-Bb-Pm3" kind="show" id="LUO-xv-i4g"/>
+                                    <segue destination="mi0-Bb-Pm3" kind="show" identifier="ToItemTVC" id="LUO-xv-i4g"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

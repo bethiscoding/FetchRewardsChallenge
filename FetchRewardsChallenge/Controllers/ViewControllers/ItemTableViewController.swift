@@ -9,27 +9,37 @@
 import UIKit
 
 class ItemTableViewController: UITableViewController {
+    
+    // MARK: - Properties
+    
+    var list: List?
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpViews()
+    }
+    
+    // MARK: - Methods
+    
+    func setUpViews() {
+        guard let list = list else { return }
+        title = "List ID: \(String(describing: list.id))"
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return list?.items.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
 
-        // Configure the cell...
+        let item = list?.items[indexPath.row]
+        cell.textLabel?.text = item?.name
 
         return cell
     }
